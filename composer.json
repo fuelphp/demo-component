@@ -1,5 +1,16 @@
 {
 	"name": "fuelphp/application",
+    "type": "library",
+    "description": "FuelPHP demo application",
+    "keywords": ["framework"],
+    "homepage": "http://fuelphp.com",
+    "license": "MIT",
+	"authors": [
+		{
+			"name": "FuelPHP Development Team",
+			"email": "team@fuelphp.com"
+		}
+	],
 	"require": {
 		"php": ">=5.3.3"
 	},
