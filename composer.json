@@ -17,8 +17,6 @@
     "autoload": {
         "classmap": ["classes/"]
     },
-    "config": {
-        "vendor-dir": "application"
-    },
+    "target-dir": "../application",
     "minimum-stability": "dev"
 }
