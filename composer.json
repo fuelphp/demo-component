@@ -1,5 +1,5 @@
 {
-	"name": "fuelphp/application",
+	"name": "fuelphp/demoapp",
     "type": "library",
     "description": "FuelPHP demo application",
     "keywords": ["framework"],
@@ -14,5 +14,11 @@
 	"require": {
 		"php": ">=5.3.3"
 	},
-	"minimum-stability": "dev"
+    "autoload": {
+        "classmap": ["classes/"]
+    },
+    "config": {
+        "vendor-dir": "application"
+    },
+    "minimum-stability": "dev"
 }
