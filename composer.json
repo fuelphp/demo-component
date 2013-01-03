@@ -1,5 +1,5 @@
 {
-	"name": "fuelphp/demoapp",
+	"name": "fuelphp/demo-package",
     "type": "fuelphp-package",
     "description": "FuelPHP demo application",
     "keywords": ["framework"],
