@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-class Welcome extends \FuelPHP\Foundation\Controller\Base
+class Welcome extends Base
 {
 	public function actionIndex()
 	{

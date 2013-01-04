@@ -11,7 +11,7 @@
 /**
  * Generate a Package object for this package and return it
  */
-return $this->env->forge('FuelPHP\Foundation\Package')
+return \FuelPHP::resolve('Package')
 	->setRoutable(true)
 	->setPath(__DIR__)
 	->setNamespace('');
