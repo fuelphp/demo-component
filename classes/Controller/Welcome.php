@@ -2,10 +2,16 @@
 
 namespace Controller;
 
-class Welcome
+class Welcome extends \FuelPHP\Foundation\Controller\Base
 {
-	public function __construct()
+	public function actionIndex()
 	{
-		die('Hello World!');
+		return 'From Welcome::index, we say: Hello World!'.
+			'<hr>Exec time: {exec_time} - Mem usage: {mem_usage} - Mem peak usage: {mem_peak_usage}';
+	}
+
+	public function actionView()
+	{
+		return 'From Welcome::view, we say: Hello World!';
 	}
 }
