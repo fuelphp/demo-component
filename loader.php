@@ -14,5 +14,4 @@
 return \FuelPHP::resolve('Package')
 	->setNamespace('')
 	->setRoutable(true)
-	->setPath(__DIR__)
-	->requireLibrary('common');
+	->setPath(__DIR__);
