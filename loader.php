@@ -12,6 +12,7 @@
  * Generate a Package object for this package and return it
  */
 return \FuelPHP::resolve('Package')
+	->setNamespace('')
 	->setRoutable(true)
 	->setPath(__DIR__)
-	->setNamespace('');
+	->requireLibrary('common');
