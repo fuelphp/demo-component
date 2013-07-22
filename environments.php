@@ -1,27 +1,27 @@
 <?php
 /**
- * Part of the FuelPHP framework.
- *
- * @package    FuelPHP\Foundation
+ * @package    Fuel
  * @version    2.0
+ * @author     Fuel Development Team
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
+ * @link       http://fuelphp.com
  *
  * @return  array
  */
 
-use FuelPHP\Foundation\Environment;
-use FuelPHP\Foundation\Loader;
+use Fuel\Foundation\Environment;
 
 /**
- * Here you setup your different environments
- * (put all defaults into '__default')
+ * Here you setup your different environments for this application
+ * Put all defaults into '__default', and don't do anything global,
+ * it will mess up a multiple application environment!
  */
 return array(
 	/**
 	 * Default settings, these are always run first
 	 *
-	 * @param   FuelPHP\Foundation\Environment $env
+	 * @param   Fuel\Foundation\Environment $env
 	 * @return  void|\Closure
 	 */
 	'__default' => function(Environment $env)
@@ -29,10 +29,16 @@ return array(
 		// Switch off error display to allow Fuel to handle them
 		// ini_set('display_errors', 'Off');
 
-		// Return array with environment config
+		/**
+		 * Localization & internationalization settings
+		 */
 		$env->locale = null;
 		$env->language = 'en';
 		$env->timezone = 'UTC';
+
+		/**
+		 * Internal string encoding charset
+		 */
 		$env->encoding = 'UTF-8';
 
 		return function (Environment $env)
@@ -44,22 +50,22 @@ return array(
 	/**
 	 * Development environment
 	 *
-	 * @param   FuelPHP\Foundation\Environment $env
+	 * @param   Fuel\Foundation\Environment $env
 	 * @return  void|\Closure
 	 */
 	'development' => function(Environment $env)
 	{
-		error_reporting(-1);
+		$env->locale = 'en_US';
 	},
 
 	/**
 	 * Production environment
 	 *
-	 * @param   FuelPHP\Foundation\Environment $env
+	 * @param   Fuel\Foundation\Environment $env
 	 * @return  void|\Closure
 	 */
 	'production' => function(Environment $env)
 	{
-		error_reporting(0);
+		$env->locale = 'nl_NL';
 	},
 );

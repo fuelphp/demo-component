@@ -1,6 +1,6 @@
 {
-	"name": "fuelphp/demo-package",
-    "type": "fuelphp-package",
+	"name": "fuelphp/demo-application",
+    "type": "fuelphp-application",
     "description": "FuelPHP demo application",
     "keywords": ["framework"],
     "homepage": "http://fuelphp.com",
@@ -12,11 +12,8 @@
 		}
 	],
 	"require": {
-		"php": ">=5.3.3",
-		"fuelphp/package-installer": "*"
+		"php": ">=5.4",
+		"fuelphp/app-installer": "dev-master"
 	},
-    "autoload": {
-        "classmap": ["classes/"]
-    },
     "minimum-stability": "dev"
 }

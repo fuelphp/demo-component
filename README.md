@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fuelphp/demo-application.png?branch=master)](https://travis-ci.org/fuelphp/demo-application)
+
 #FuelPHP
 
 * Version: 2.0
@@ -7,8 +9,6 @@
 * [Development Documentation](http://dev-docs.fuelphp.com)
 * [Development API browser](http://dev-api.fuelphp.com)
 * [Forums](http://fuelphp.com/forums) for comments, discussion and community support
-
-[![Build Status](https://travis-ci.org/fuelphp/application.png?branch=develop)](https://travis-ci.org/fuelphp/application)
 
 ## Description
 
