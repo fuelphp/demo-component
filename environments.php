@@ -24,7 +24,7 @@ return array(
 	 * @param   Fuel\Foundation\Environment $env
 	 * @return  void|\Closure
 	 */
-	'__default' => function(Environment $env)
+	'default' => function(Environment $env)
 	{
 		// Switch off error display to allow Fuel to handle them
 		// ini_set('display_errors', 'Off');
