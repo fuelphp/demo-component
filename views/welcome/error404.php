@@ -2,8 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?php echo $title; ?></title>
-	<?php echo Asset::css('bootstrap.css'); ?>
+	<title>Aw, Crap!</title>
+	<?php //echo Asset::css('bootstrap.css'); ?>
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
 	<style>
 		#logo{
 			display: block;
@@ -42,14 +43,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="span16">
-				<h1><?php echo $title; ?> <small>We can't find that!</small></h1>
+				<h1><?php echo "Aw, Crap!";// $title; ?> <small>We can't find that!</small></h1>
 				<hr>
-				<p>The controller generating this page is found at <code>APPPATH/classes/controller/welcome.php</code>.</p>
-				<p>This view is located at <code>APPPATH/views/welcome/404.php</code>.</p>
+				<p>The controller generating this page is found at <code>APPSPATH/classes/controller/welcome.php</code>.</p>
+				<p>This view is located at <code>APPSPATH/views/welcome/error404.php</code>.</p>
 			</div>
 		</div>
 		<footer>
-			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
+			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}Mb (peak: {mem_peak_usage}Mb) of memory.</p>
 			<p>
 				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
 				<small>Version: <?php echo Fuel::VERSION; ?></small>
