@@ -10,7 +10,7 @@
 
 namespace Controller;
 
-class Welcome extends \Controller\Base
+class Welcome extends \Fuel\Controller\Base
 {
 	/**
 	 * The basic welcome message
@@ -20,7 +20,7 @@ class Welcome extends \Controller\Base
 	 */
 	public function actionIndex()
 	{
-		return $this->view->forge('welcome/index');
+		return $this->viewManager->forge('welcome/index');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class Welcome extends \Controller\Base
 	 */
 	public function actionHello()
 	{
-		return $this->view->presenter('welcome/index');
+		return $this->viewManager->presenter('welcome/index');
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Welcome extends \Controller\Base
 	 */
 	public function actionError404()
 	{
-		return $this->view->forge('welcome/error404');
+		return $this->viewManager->forge('welcome/error404');
 //		return Response::forge(ViewModel::forge('welcome/404'), 404);
 	}
 

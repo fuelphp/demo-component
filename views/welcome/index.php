@@ -57,6 +57,7 @@
 				<h2>Learn</h2>
 				<p>The best way to learn FuelPHP is reading through the <a href="http://docs.fuelphp.com">Documentation</a>.</p>
 				<p>Another good resource is the <a href="http://fuelphp.com/forums">Forums</a>.  They are fairly active, and you can usually get a response quickly.</p>
+				<p>You can also join us on IRC, channel <a href="http://webchat.freenode.net/?channels=fuelphp">#fuelphp</a> on <a href="http://freenode.net/">freenode</a>, for a chat.</p>
 			</div>
 			<div class="span4">
 				<h2>Contribute</h2>
