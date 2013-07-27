@@ -20,7 +20,7 @@ class Welcome extends \Fuel\Controller\Base
 	 */
 	public function actionIndex()
 	{
-		return $this->viewManager->forge('welcome/index');
+		return \View::forge('welcome/index');
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Welcome extends \Fuel\Controller\Base
 	 */
 	public function actionError404()
 	{
-		return $this->viewManager->forge('welcome/error404');
+		return \View::forge('welcome/error404');
 //		return Response::forge(ViewModel::forge('welcome/404'), 404);
 	}
 
