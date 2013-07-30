@@ -32,7 +32,7 @@ class Welcome extends \Fuel\Controller\Base
 	 */
 	public function actionHello()
 	{
-		return $this->viewManager->presenter('welcome/index');
+		return \Presenter::forge('welcome/hello');
 	}
 
 	/**
@@ -43,8 +43,7 @@ class Welcome extends \Fuel\Controller\Base
 	 */
 	public function actionError404()
 	{
-		return \View::forge('welcome/error404');
-//		return Response::forge(ViewModel::forge('welcome/404'), 404);
+		return \Response::forge(\Presenter::forge('welcome/404'), 404);
 	}
 
 }
