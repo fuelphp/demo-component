@@ -41,9 +41,9 @@ class Welcome extends \Fuel\Controller\Base
 	 * @access  public
 	 * @return  Response
 	 */
-	public function actionError404()
+	public function action404()
 	{
-		return \Response::forge(\Presenter::forge('welcome/404'), 404);
+		return \Response::forge(\Presenter::forge('welcome/error404', null, null, 'welcome/404'), 404);
 	}
 
 }

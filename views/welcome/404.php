@@ -43,10 +43,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="span16">
-				<h1><?php echo "Aw, Crap!";// $title; ?> <small>We can't find that!</small></h1>
+				<h1><?php echo $title; ?> <small>We can't find that!</small></h1>
 				<hr>
-				<p>The controller generating this page is found at <code>APPSPATH/classes/controller/welcome.php</code>.</p>
-				<p>This view is located at <code>APPSPATH/views/welcome/error404.php</code>.</p>
+				<p>The controller generating this page is found at <code>APPSPATH/demo/classes/controller/welcome.php</code>.</p>
+				<p>This view is located at <code>APPSPATH/demo/views/welcome/error404.php</code>.</p>
 			</div>
 		</div>
 		<footer>
