@@ -15,6 +15,14 @@
  * It contains configuration which is for this application only.
  */
 
+/**
+ * Variables passed:
+ * $router - This applications Router instance
+ *
+ * You can finish the routing configuration by returning a Fuel v1.x style
+ * route array, which will be parsed and converted to v2 route definitions
+ */
+
 // homepage route
 $router->all('/', 'welcome/index', 'root');
 
