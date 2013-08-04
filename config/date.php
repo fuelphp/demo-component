@@ -18,6 +18,13 @@
 return array(
 
 	/**
+	 * Do NOT change this value, unless the timezone of your server is NOT the same timezone
+	 * you want the application to run in. For example, if the server time is in UTC, but you
+	 * want the application to run in CEST, set the offset to 3600 (because it is GMT+1).
+	 */
+	'gmtOffset' => 0,
+
+	/**
 	 * A couple of named patterns that are often used. Use the formats defined
 	 * for strftime: http://php.net/manual/en/function.strftime.php
 	 */
