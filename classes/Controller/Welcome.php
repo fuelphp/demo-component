@@ -1,6 +1,6 @@
 <?php
 /**
- * @package    Fuel\Foundation
+ * @package    demo-application
  * @version    2.0
  * @author     Fuel Development Team
  * @license    MIT License
