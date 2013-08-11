@@ -18,10 +18,11 @@
 /**
  * Variables passed:
  * $router - This applications Router instance
+ * $config   Information about the Application/Module definition
  *
  * You can finish the routing configuration by returning a Fuel v1.x style
  * route array, which will be parsed and converted to v2 route definitions
  */
 
 // module default route
-$router->all('moda', 'moda/welcome/index', 'moda-root');
+$router->all($config['prefix'], $config['prefix'].'/welcome/index', $config['prefix'].'-module');
