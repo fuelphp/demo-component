@@ -29,45 +29,45 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Formatter\LineFormatter;
 
 /**
- * step 1: make sure the log directories exist
+ * step 1: make sure the log directories and current log file exist
  */
 try
 {
 	// set the paths and filenames
 	$path = realpath(__DIR__.DS.'..'.DS.'logs').DS;
-
-	// get the required folder permissions
-	$permission = $app->getConfig()->get('file.chmod.folders', 0777);
-
 	$rootpath = $path.date('Y').DS;
-	if ( ! is_dir($rootpath))
-	{
-		mkdir($rootpath, $permission, true);
-		chmod($rootpath, $permission);
-	}
-
 	$filepath = $path.date('Y/m').DS;
-	if ( ! is_dir($filepath))
-	{
-		mkdir($filepath, $permission, true);
-		chmod($filepath, $permission);
-	}
-
 	$filename = $filepath.date('d').'.php';
 
-	$handle = fopen($filename, 'a');
+	if ( ! file_exists($filename) or ! filesize($filename))
+	{
+		// get the required folder permissions
+		$permission = $app->getConfig()->get('file.chmod.folders', 0777);
+
+		if ( ! is_dir($rootpath))
+		{
+			mkdir($rootpath, $permission, true);
+			chmod($rootpath, $permission);
+		}
+
+		if ( ! is_dir($filepath))
+		{
+			mkdir($filepath, $permission, true);
+			chmod($filepath, $permission);
+		}
+
+		$handle = fopen($filename, 'a');
+
+		fwrite($handle, "<?php defined('APPSPATH') or exit('No direct script access allowed'); ?>".PHP_EOL.PHP_EOL);
+		chmod($filename, $app->getConfig()->get('file.chmod.files', 0666));
+
+		fclose($handle);
+	}
 }
 catch (\Exception $e)
 {
 	throw new \RuntimeException('Unable to create or write to the log file. Please check the permissions on '.$path);
 }
-
-if ( ! filesize($filename))
-{
-	fwrite($handle, "<?php defined('APPSPATH') or exit('No direct script access allowed'); ?>".PHP_EOL.PHP_EOL);
-	chmod($filename, $app->getConfig()->get('file.chmod.files', 0666));
-}
-fclose($handle);
 
 /**
  * step 2: create the default streamhandler, and activate the handler
