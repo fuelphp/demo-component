@@ -26,6 +26,8 @@
 // homepage route
 $router->all('/', 'welcome/index', 'root');
 
+$router->all('test', function() { return 'welcome/index'; });
+
 // named GET route with a parameter
 $router->get('hello/{name}', 'welcome/hello', 'hello');
 
