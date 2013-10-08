@@ -26,7 +26,7 @@
 // homepage route
 $router->all('/', 'welcome/index', 'root');
 
-$router->all('test', function() { return 'welcome/index'; });
+$router->all('test', function() { return \Response::forge('html', \View::forge('welcome/index')); });
 
 // named GET route with a parameter
 $router->get('hello/{name}', 'welcome/hello', 'hello');
