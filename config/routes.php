@@ -23,17 +23,31 @@
  * route array, which will be parsed and converted to v2 route definitions
  */
 
+// 404 route
+$router->all(null, 'welcome/404', '404');
+
 // homepage route
 $router->all('/', 'welcome/index', 'root');
-
-$router->all('test', function() { return 'welcome/index'; });
 
 // named GET route with a parameter
 $router->get('hello/{name}', 'welcome/hello', 'hello');
 
+// inline route
+$router->all('test', function() { return \Response::forge('html', 'welcome/index'); });
+
 /*
- * We support old v1.x style routes too!
+ * We support old v1.x style routes too when you have the Compatibility package loaded!
  */
+
+ /*
 return array(
-	'_404_'   => 'welcome/404',    // The main 404 route
+    'blog/(:any)'      => 'blog/entry/$1', // Routes /blog/entry_name to /blog/entry/entry_name
+    '(:segment)/about' => 'site/about/$1', // Routes /en/about to /site/about/en
+    '(\d{2})/about'    => 'site/about/$1', // Routes /12/about to /site/about/12
+    'blog/:year/:month/:id' => 'blog/entry', // Routes /blog/2010/11/entry_name to /blog/entry
+    // Routes GET /blog to /blog/all and POST /blog to /blog/create
+    'blog' => array(array('GET', new Route('blog/all')), array('POST', new Route('blog/create'))),
+    'blog/(:any)' => array(array('GET', new Route('blog/show/$1'))),
+    'blog/(:any)' => array(array('GET', new Route('blog/show/$1'), true)),
 );
+*/
