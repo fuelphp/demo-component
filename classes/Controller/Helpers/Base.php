@@ -12,12 +12,13 @@ namespace Demo\Controller\Helpers;
 
 use Fuel\Foundation\InjectionFactory;
 
+/**
+ * base class test
+ */
 class Base extends \Fuel\Controller\Base
 {
 	public function __construct(InjectionFactory $factory)
 	{
-		var_dump('x');
-
 		parent::__construct($factory);
 	}
 }
