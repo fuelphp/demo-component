@@ -8,9 +8,9 @@
  * @link       http://fuelphp.com
  */
 
-namespace Controller;
+namespace Demo\Controller;
 
-class Welcome extends \Fuel\Controller\Base
+class Welcome extends Helpers\Base
 {
 	/**
 	 * The basic welcome message

@@ -8,7 +8,7 @@
  * @link       http://fuelphp.com
  */
 
-namespace Presenter\Welcome;
+namespace Demo\Presenter\Welcome;
 
 use Fuel\Display\Presenter;
 
