@@ -16,6 +16,6 @@
 		"fuelphp/app-installer": "dev-master"
 	},
 	"autoload": {
-		"psr-4": { "Demo//": "classes/" }
+		"psr-4": { "Demo\\": "classes/" }
 	}
 }
