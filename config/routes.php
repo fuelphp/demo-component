@@ -33,7 +33,7 @@ $router->all('/', 'welcome/index', 'root');
 $router->get('hello/{name}', 'welcome/hello', 'hello');
 
 // inline route
-$router->all('test', function() { return \Response::forge('html', 'welcome/index'); });
+$router->all('inline', function() { return \Response::forge('html', 'welcome/index'); });
 
 /*
  * We support old v1.x style routes too when you have the Compatibility package loaded!

@@ -15,5 +15,7 @@
 		"php": ">=5.4",
 		"fuelphp/app-installer": "dev-master"
 	},
-    "minimum-stability": "dev"
+	"autoload": {
+		"psr-4": { "Demo//": "classes/" }
+	}
 }

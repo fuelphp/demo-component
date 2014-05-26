@@ -26,3 +26,6 @@
 
 // module default route
 $router->all($config['prefix'], $config['prefix'].'/welcome/index', $config['prefix'].'-module');
+
+// named GET route with a parameter
+$router->get('moda/hello/{name}', 'moda/welcome/hello', 'moda-hello');
