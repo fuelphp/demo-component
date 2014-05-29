@@ -21,10 +21,10 @@
  */
 
 // module default route
-$this->router->all($this->uri, $this->uri.'/welcome/index', $this->uri.'-module');
+$this->router->all('/', 'moda/welcome/index', $this->uri.'-module');
 
 // named GET route with a parameter
-$this->router->get('moda/hello/{name}', 'moda/welcome/hello', 'moda-hello');
+$this->router->get('hello/{name}', 'moda/welcome/hello', 'moda-hello');
 
 // test recursive route
-$this->router->all('moda/recurse', 'recurse/one');
+$this->router->all('recurse', 'recurse/one');
