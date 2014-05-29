@@ -31,6 +31,10 @@ $this->router->get('hello/{name}', 'welcome/hello', 'hello');
 // inline route
 $this->router->all('inline', function() { return \Response::forge('html', 'This is an inline route!'); });
 
+// test recursive route
+$this->router->all('recurse/one', 'recurse/two');
+$this->router->all('recurse/two', 'hello/Recursive Route');
+
 /*
  * You can finish the routing configuration by returning a Fuel v1.x style
  * route array, which will be parsed and converted to v2 route definitions
