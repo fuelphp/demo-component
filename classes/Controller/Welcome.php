@@ -24,15 +24,16 @@ class Welcome extends Helpers\Base
 	}
 
 	/**
-	 * A typical "Hello, Bob!" type example.  This uses a Presenter to
-	 * show you how to use them.
+	 * A typical "Hello, Bob!" type example.  This uses named parameters in
+	 * the route, and a Presenter to show you how to use them.
 	 *
 	 * @access  public
 	 * @return  Presenter
 	 */
 	public function actionHello()
 	{
-		return \Presenter::forge('welcome/hello');
+		return \Presenter::forge('welcome/hello')
+			->set('name', $this->request->getParam('name', 'World'));
 	}
 
 	/**

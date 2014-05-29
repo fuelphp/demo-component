@@ -28,6 +28,10 @@ class Hello extends Presenter
 	 */
 	public function view()
 	{
-		$this->name = $this->request->getParam('name', 'World');
+		// if we didn't have a name passed, make one up
+		if ( ! isset($this->name))
+		{
+			$this->name = 'World';
+		}
 	}
 }

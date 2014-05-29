@@ -45,9 +45,11 @@
 			<div class="span16">
 				<h1>Hello, <?php echo $name; ?>! <small>Congratulations, you just used a Presenter!</small></h1>
 				<hr>
-				<p>The controller generating this page is found at <code>APPSPATH/demo/classes/controller/welcome.php</code>.</p>
-				<p>This view is located at <code>APPSPATH/demo/views/welcome/hello.php</code>.</p>
-				<p>It is loaded via a Presenter class with a name of <code>\Presenter\Welcome\Hello</code>, located in <code>APPSPATH/demo/classes/presenter/welcome/hello.php</code></p>
+				<p>The controller generating this page is found at <code>[ROOT]/components/demo/classes/Controller/Welcome.php</code>.</p>
+				<p>
+					This view is located at <code>[ROOT]/components/demo/views/welcome/hello.php</code>.
+					It is loaded via a Presenter class with a name of <code>\Presenter\Welcome\Hello</code>, located in <code>[ROOT]/components/demo/classes/Presenter/Welcome/Hello.php</code>
+				</p>
 			</div>
 		</div>
 		<footer>

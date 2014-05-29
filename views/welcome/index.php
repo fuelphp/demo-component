@@ -49,8 +49,8 @@
 		<div class="row">
 			<div class="span4">
 				<h2>Get Started</h2>
-				<p>The controller generating this page is found at <code>APPSPATH/demo/classes/controller/welcome.php</code>.</p>
-				<p>This view can be found at <code>APPSPATH/demo/views/welcome/index.php</code>.</p>
+				<p>The controller generating this page is found at <code>[ROOT]/components/demo/classes/Controller/Welcome.php</code>.</p>
+				<p>This view can be found at <code>[ROOT]/components/demo/views/welcome/index.php</code>.</p>
 				<p>You can modify these files to get your application started quickly.</p>
 			</div>
 			<div class="span4">
