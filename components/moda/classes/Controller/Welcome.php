@@ -4,7 +4,7 @@
  * @version    2.0
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2013 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -32,7 +32,8 @@ class Welcome extends \Fuel\Controller\Base
 	 */
 	public function actionHello()
 	{
-		return \Presenter::forge('welcome/hello');
+		return \Presenter::forge('welcome/hello')
+			->set('name', $this->request->getParam('name', 'Universe'));
 	}
 
 	/**
