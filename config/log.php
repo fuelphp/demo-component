@@ -6,14 +6,14 @@
  * @license    MIT License
  * @copyright  2010 - 2013 Fuel Development Team
  * @link       http://fuelphp.com
+ *
+ * @return  array
  */
 
-/**
- * NOTICE:
- *
- * This is the global configuration for the FuelPHP framework. It contains
- * configuration which is global for all installed applications.
- */
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Formatter\LineFormatter;
+use Fuel\Foundation\Application;
 
 /**
  * Variables passed:
@@ -24,60 +24,68 @@
  * replace the default Logger instance setup by the application
  */
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-use Monolog\Formatter\LineFormatter;
-
-/**
- * step 1: make sure the log directories and current log file exist
- */
-try
-{
-	// set the paths and filenames
-	$path = realpath(__DIR__.DS.'..'.DS.'logs').DS;
-	$rootpath = $path.date('Y').DS;
-	$filepath = $path.date('Y/m').DS;
-	$filename = $filepath.date('d').'.php';
-
-	if ( ! file_exists($filename) or ! filesize($filename))
+return array(
+	/**
+	 * Customize the log handler
+	 *
+	 * @param   Fuel\Foundation\Application  $app
+	 * @param   Monolog\Logger               $log
+	 * @return  void|\Closure
+	 */
+	'customize' => function(Application $app, Logger $log)
 	{
-		// get the required folder permissions
-		$permission = $app->getConfig()->get('file.chmod.folders', 0777);
-
-		if ( ! is_dir($rootpath))
+		/**
+		 * step 1: make sure the log directories and current log file exist
+		 */
+		try
 		{
-			mkdir($rootpath, $permission, true);
-			chmod($rootpath, $permission);
+			// set the paths and filenames
+			$path = realpath(__DIR__.DS.'..'.DS.'logs').DS;
+			$rootpath = $path.date('Y').DS;
+			$filepath = $path.date('Y/m').DS;
+			$filename = $filepath.date('d').'.php';
+
+			if ( ! file_exists($filename) or ! filesize($filename))
+			{
+				// get the required folder permissions
+				$permission = $app->getConfig()->get('file.chmod.folders', 0777);
+
+				if ( ! is_dir($rootpath))
+				{
+					mkdir($rootpath, $permission, true);
+					chmod($rootpath, $permission);
+				}
+
+				if ( ! is_dir($filepath))
+				{
+					mkdir($filepath, $permission, true);
+					chmod($filepath, $permission);
+				}
+
+				$handle = fopen($filename, 'a');
+
+				fwrite($handle, "<?php defined('Fuel::VERSION') or exit('No direct script access allowed'); ?>".PHP_EOL.PHP_EOL);
+				chmod($filename, $app->getConfig()->get('file.chmod.files', 0666));
+
+				fclose($handle);
+			}
+		}
+		catch (\Exception $e)
+		{
+			throw new \RuntimeException('Unable to create or write to the log file. Please check the permissions on '.$path);
 		}
 
-		if ( ! is_dir($filepath))
-		{
-			mkdir($filepath, $permission, true);
-			chmod($filepath, $permission);
-		}
+		/**
+		 * step 2: create the default streamhandler, and activate the handler
+		 */
 
-		$handle = fopen($filename, 'a');
+		// determine the log level needed
+		$level = $app->Environment() == 'production' ? Logger::ERROR : Logger::DEBUG;
 
-		fwrite($handle, "<?php defined('APPSPATH') or exit('No direct script access allowed'); ?>".PHP_EOL.PHP_EOL);
-		chmod($filename, $app->getConfig()->get('file.chmod.files', 0666));
-
-		fclose($handle);
-	}
-}
-catch (\Exception $e)
-{
-	throw new \RuntimeException('Unable to create or write to the log file. Please check the permissions on '.$path);
-}
-
-/**
- * step 2: create the default streamhandler, and activate the handler
- */
-
-// determine the log level needed
-$level = $app->env->name == 'production' ? Logger::ERROR : Logger::DEBUG;
-
-// define the default streamhandler and formatter, and push them on the log instance
-$stream = new StreamHandler($filename, $level);
-$formatter = new LineFormatter("%level_name% - %datetime% --> %message%".PHP_EOL, "Y-m-d H:i:s");
-$stream->setFormatter($formatter);
-$log->pushHandler($stream);
+		// define the default streamhandler and formatter, and push them on the log instance
+		$stream = new StreamHandler($filename, $level);
+		$formatter = new LineFormatter("%level_name% - %datetime% --> %message%".PHP_EOL, "Y-m-d H:i:s");
+		$stream->setFormatter($formatter);
+		$log->pushHandler($stream);
+	},
+);

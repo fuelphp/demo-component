@@ -17,8 +17,4 @@ use Fuel\Foundation\InjectionFactory;
  */
 class Base extends \Fuel\Controller\Base
 {
-	public function __construct(InjectionFactory $factory)
-	{
-		parent::__construct($factory);
-	}
 }

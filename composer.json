@@ -1,7 +1,7 @@
 {
-	"name": "fuelphp/demo-application",
-    "type": "fuelphp-application",
-    "description": "FuelPHP demo application",
+	"name": "fuelphp/demo-component",
+    "type": "fuelphp-component",
+    "description": "FuelPHP demo component",
     "keywords": ["framework"],
     "homepage": "http://fuelphp.com",
     "license": "MIT",
@@ -13,7 +13,7 @@
 	],
 	"require": {
 		"php": ">=5.4",
-		"fuelphp/app-installer": "dev-master"
+		"fuelphp/component-installer": "dev-master"
 	},
 	"autoload": {
 		"psr-4": { "Demo\\": "classes/" }
