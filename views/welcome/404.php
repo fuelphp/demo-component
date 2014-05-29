@@ -45,8 +45,8 @@
 			<div class="span16">
 				<h1><?php echo $title; ?> <small>We can't find that!</small></h1>
 				<hr>
-				<p>The controller generating this page is found at <code>[ROOT]/components/demo/classes/Controller/Welcome.php</code>.</p>
-				<p>This view is located at <code>APPSPATH/demo/views/welcome/error404.php</code>.</p>
+				<p>The controller generating this page is found at <code><?php echo cleanpath(realpath(__DIR__.DS.'..'.DS.'..'.DS.'classes'.DS.'Controller'.DS.'Welcome.php')); ?></code>.</p>
+				<p>This view is located at <code><?php echo cleanpath(__FILE__); ?></code>.</p>
 			</div>
 		</div>
 		<footer>

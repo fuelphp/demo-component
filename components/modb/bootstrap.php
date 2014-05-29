@@ -1,6 +1,6 @@
 <?php
 /**
- * @package    demo-application
+ * @package    demo-component
  * @version    2.0
  * @author     Fuel Development Team
  * @license    MIT License
@@ -9,7 +9,6 @@
  */
 
 /**
- * Bootstrap file for module Modb
- *
- * $app is available for current application access
+ * Bootstrap file for component Modb
  */
+

@@ -45,10 +45,10 @@
 			<div class="span16">
 				<h1>Hello, <?php echo $name; ?>! <small>Congratulations, you just used a Presenter!</small></h1>
 				<hr>
-				<p>The controller generating this page is found at <code>[ROOT]/components/demo/classes/Controller/Welcome.php</code>.</p>
+				<p>The controller generating this page is found at <code><?php echo cleanpath(realpath(__DIR__.DS.'..'.DS.'..'.DS.'classes'.DS.'Controller'.DS.'Welcome.php')); ?></code>.</p>
 				<p>
-					This view is located at <code>[ROOT]/components/demo/views/welcome/hello.php</code>.
-					It is loaded via a Presenter class with a name of <code>\Presenter\Welcome\Hello</code>, located in <code>[ROOT]/components/demo/classes/Presenter/Welcome/Hello.php</code>
+					This view is located at <code><?php echo cleanpath(__FILE__); ?></code>.
+					It is loaded via a Presenter class with a name of <code>\Presenter\Welcome\Hello</code>, located in <code><?php echo cleanpath(realpath(__DIR__.DS.'..'.DS.'..'.DS.'classes'.DS.'Presenter'.DS.'Welcome'.DS.'Hello.php')); ?></code>
 				</p>
 			</div>
 		</div>

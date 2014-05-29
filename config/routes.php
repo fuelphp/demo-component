@@ -1,6 +1,6 @@
 <?php
 /**
- * @package    demo-application
+ * @package    demo-component
  * @version    2.0
  * @author     Fuel Development Team
  * @license    MIT License
@@ -16,27 +16,24 @@
  */
 
 /**
- * Variables passed:
- * $router - This applications Router instance
- *
- * You can finish the routing configuration by returning a Fuel v1.x style
- * route array, which will be parsed and converted to v2 route definitions
+ * You can access the current component instance using $this!
  */
 
 // 404 route
-$router->all(null, 'welcome/404', '404');
+$this->router->all(null, 'welcome/404', '404');
 
 // homepage route
-$router->all('/', 'welcome/index', 'root');
+$this->router->all('/', 'welcome/index', 'root');
 
 // named GET route with a parameter
-$router->get('hello/{name}', 'welcome/hello', 'hello');
+$this->router->get('hello/{name}', 'welcome/hello', 'hello');
 
 // inline route
-$router->all('inline', function() { return \Response::forge('html', 'welcome/index'); });
+$this->router->all('inline', function() { return \Response::forge('html', 'This is an inline route!'); });
 
 /*
- * We support old v1.x style routes too when you have the Compatibility package loaded!
+ * You can finish the routing configuration by returning a Fuel v1.x style
+ * route array, which will be parsed and converted to v2 route definitions
  */
 
  /*
