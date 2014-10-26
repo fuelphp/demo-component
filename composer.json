@@ -1,10 +1,10 @@
 {
 	"name": "fuelphp/demo-component",
-    "type": "fuelphp-component",
-    "description": "FuelPHP demo component",
-    "keywords": ["framework"],
-    "homepage": "http://fuelphp.com",
-    "license": "MIT",
+	"type": "fuelphp-component",
+	"description": "FuelPHP demo component",
+	"keywords": ["framework"],
+	"homepage": "http://fuelphp.com",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "FuelPHP Development Team",
@@ -13,7 +13,7 @@
 	],
 	"require": {
 		"php": ">=5.4",
-		"fuelphp/component-installer": "dev-master"
+		"composer/installers": "dev-master"
 	},
 	"autoload": {
 		"psr-4": { "Demo\\": "classes/" }
