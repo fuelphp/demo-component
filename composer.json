@@ -17,5 +17,8 @@
 	},
 	"autoload": {
 		"psr-4": { "Demo\\": "classes/" }
+	},
+	"extra": {
+		"installer-name": "demo"
 	}
 }
