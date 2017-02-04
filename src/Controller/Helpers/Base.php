@@ -25,7 +25,7 @@ class Base extends AbstractController
 	public function __construct()
 	{
 		// TODO: Move this to the dependency container in fuelphp/foundation package
-		$this->viewManager = new ViewManager(new Finder([realpath(__DIR__.'/../../../views'])));
+		$this->viewManager = new ViewManager(new Finder([realpath(__DIR__.'/../../../views')]));
 	}
 
 	protected function getView(string $name, array $data = []): View
