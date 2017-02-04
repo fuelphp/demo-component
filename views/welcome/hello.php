@@ -39,12 +39,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Hello, <?php echo $name; ?>! <small>Congratulations, you just used a Presenter!</small></h1>
+				<h1>Hello, <?php echo $name; ?>!</h1>
 				<hr>
-				<p>The controller generating this page is found at <code><?php echo cleanpath(realpath(__DIR__.DS.'..'.DS.'..'.DS.'classes'.DS.'Controller'.DS.'Welcome.php')); ?></code>.</p>
+				<p>The controller generating this page is found at <code><?php echo cleanpath(realpath(__DIR__.DS.'..'.DS.'..'.DS.'src'.DS.'Controller'.DS.'Welcome.php')); ?></code>.</p>
 				<p>
 					This view is located at <code><?php echo cleanpath(__FILE__); ?></code>.
-					It is loaded via a Presenter class with a name of <code>\Presenter\Welcome\Hello</code>, located in <code><?php echo cleanpath(realpath(__DIR__.DS.'..'.DS.'..'.DS.'classes'.DS.'Presenter'.DS.'Welcome'.DS.'Hello.php')); ?></code>.
 				</p>
 			</div>
 		</div>
@@ -52,7 +51,7 @@
 			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
 			<p>
 				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
-				<small>Version: <?php echo Fuel::VERSION; ?></small>
+				<small>Version: 2.0.0-alpha</small>
 			</p>
 		</footer>
 	</div>

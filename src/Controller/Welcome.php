@@ -18,7 +18,7 @@ class Welcome extends Base
 	/**
 	 * The basic welcome message
 	 *
-	 * @return View
+	 * @return string
 	 */
 	public function actionIndex()
 	{
@@ -29,7 +29,7 @@ class Welcome extends Base
 	 * A typical "Hello, Bob!" type example.  This uses named parameters in
 	 * the route, and a Presenter to show you how to use them.
 	 *
-	 * @return View
+	 * @return string
 	 */
 	public function actionHello()
 	{
@@ -38,17 +38,18 @@ class Welcome extends Base
 			[
 				'name' => $this->getRouteParam('name', 'World'),
 			]
-		);
+		)
+			->render();
 	}
 
 	/**
 	 * The 404 action for the application.
 	 *
-	 * @return View
+	 * @return string
 	 */
 	public function action404()
 	{
-		return $this->getView('welcome/error404');
+		return $this->getView('welcome/error404')->render();
 	}
 
 }

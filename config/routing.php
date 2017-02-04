@@ -16,11 +16,11 @@
  */
 
 return [
-	'/' =>[
+	'' =>[
 		'controller' => 'Fuel\Demo\Controller\Welcome',
 		'action' => 'actionIndex'
 	],
-	'/hello/(string:name)' => [
+	'hello/{string:name}' => [
 		'controller' => 'Fuel\Demo\Controller\Welcome',
 		'action' => 'actionHello'
 	]
