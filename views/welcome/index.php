@@ -45,7 +45,7 @@
 		<div class="row">
 			<div class="col-md-5">
 				<h2>Get Started</h2>
-				<p>The controller generating this page is found at <code><?php echo cleanpath(realpath(__DIR__.DS.'..'.DS.'..'.DS.'classes'.DS.'Controller'.DS.'Welcome.php')); ?></code>.</p>
+				<p>The controller generating this page is found at <code><?php echo cleanpath(realpath(__DIR__.DS.'..'.DS.'..'.DS.'src'.DS.'Controller'.DS.'Welcome.php')); ?></code>.</p>
 				<p>This view can be found at <code><?php echo cleanpath(__FILE__); ?></code>.</p>
 				<p>You can modify these files to get your application started quickly.</p>
 			</div>
@@ -69,7 +69,7 @@
 			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
 			<p>
 				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
-				<small>Version: <?php echo Fuel::VERSION; ?></small>
+				<small>Version: 2.0.0-alpha</small>
 			</p>
 		</footer>
 	</div>

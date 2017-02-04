@@ -22,7 +22,7 @@ class Welcome extends Base
 	 */
 	public function actionIndex()
 	{
-		return $this->getView('welcome/index');
+		return $this->getView('welcome/index.php')->render([]);
 	}
 
 	/**
