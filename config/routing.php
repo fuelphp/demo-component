@@ -17,11 +17,11 @@
 
 return [
 	'/' =>[
-		'controller' => 'Fuel\Demo\Controller\WelcomeController',
+		'controller' => 'Fuel\Demo\Controller\Welcome',
 		'action' => 'actionIndex'
 	],
 	'/hello/(string:name)' => [
-		'controller' => 'Fuel\Demo\Controller\WelcomeController',
+		'controller' => 'Fuel\Demo\Controller\Welcome',
 		'action' => 'actionHello'
 	]
 ];
