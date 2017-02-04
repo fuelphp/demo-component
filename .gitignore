@@ -12,3 +12,5 @@ nbproject
 .idea
 logs/*
 cache/*
+composer.lock
+/vendor

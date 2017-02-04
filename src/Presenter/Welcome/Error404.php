@@ -4,11 +4,11 @@
  * @version    2.0
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2014 Fuel Development Team
+ * @copyright  2010 - 2017 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
-namespace Moda\Presenter\Welcome;
+namespace Demo\Presenter\Welcome;
 
 use Fuel\Display\Presenter;
 
@@ -18,7 +18,7 @@ use Fuel\Display\Presenter;
  * @package  demo-application
  * @extends  Fuel\Display\Presenter
  */
-class Hello extends Presenter
+class Error404 extends Presenter
 {
 	/**
 	 * Prepare the view data, keeping this in here helps clean up
@@ -28,10 +28,7 @@ class Hello extends Presenter
 	 */
 	public function view()
 	{
-		// if we didn't have a name passed, make one up
-		if ( ! isset($this->name))
-		{
-			$this->name = 'Universe';
-		}
+		$messages = array('Aw, crap!', 'Bloody Hell!', 'Uh Oh!', 'Nope, not here.', 'Huh?');
+		$this->title = $messages[array_rand($messages)];
 	}
 }

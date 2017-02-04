@@ -13,12 +13,17 @@
 	],
 	"require": {
 		"php": ">=5.4",
-		"composer/installers": "dev-master"
+		"composer/installers": "dev-master",
+		"fuelphp/display": "dev-master"
+	},
+	"require-dev": {
+		"fuelphp/foundation": "dev-master"
 	},
 	"autoload": {
-		"psr-4": { "Demo\\": "classes/" }
+		"psr-4": { "Fuel\\Demo\\": "src/" }
 	},
 	"extra": {
 		"installer-name": "demo"
-	}
+	},
+	"minimum-stability": "dev"
 }
